@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 var request = require('request');
 
 //watson
-var watson = require('watson-developer-cloud');
+//var watson = require('watson-developer-cloud');
 /*var username = '28aeb4cc-22d0-4261-a89c-bbc75fab34fb';
 var password = 'pPqgxASkaxVJ';
 var classifier_id = '';
@@ -74,7 +74,7 @@ app.post('/api', function(req, res) {
       replyToken: req.body.events[0].replyToken,
       messages: [{
         type: "text",
-        text: watson
+        text: "test"
       }]
     },
     auth: {
