@@ -28,16 +28,16 @@ var request = require('request');
 
 //watson
 var watson = require('watson-developer-cloud');
-var username = '28aeb4cc-22d0-4261-a89c-bbc75fab34fb';
+/*var username = '28aeb4cc-22d0-4261-a89c-bbc75fab34fb';
 var password = 'pPqgxASkaxVJ';
 var classifier_id = '';
 var natural_language_classifier = watson.natural_language_classifier({
   username: username,
   password: password,
   version: 'v1'
-});
+});*/
 
-app.post('/api', function(req, res) {
+/*app.post('/api', function(req, res) {
 	natural_language_classifier.list({},
 	  function(err, response) {
 	      if (err)
@@ -65,8 +65,8 @@ app.post('/api', function(req, res) {
 			  });
 			  res.send('OK');
   });  
-});
-/*app.post('/api', function(req, res) {
+});*/
+app.post('/api', function(req, res) {
   var options = {
     method: 'POST',
     uri: 'https://api.line.me/v2/bot/message/reply',
@@ -74,7 +74,7 @@ app.post('/api', function(req, res) {
       replyToken: req.body.events[0].replyToken,
       messages: [{
         type: "text",
-        text: "こんばんは"
+        text: watson
       }]
     },
     auth: {
@@ -86,7 +86,7 @@ app.post('/api', function(req, res) {
     console.log(JSON.stringify(res));
   });
   res.send('OK');
-});*/
+});
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
